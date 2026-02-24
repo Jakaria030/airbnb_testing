@@ -10,6 +10,7 @@ from automation.tests.step_07 import step_07
 from automation.tests.step_08 import step_08
 from automation.tests.step_09 import step_09
 from automation.tests.step_10 import step_10
+from automation.tests.step_11 import step_11
 
 def playwright_runner():
     with BrowserSession(headless=False, slow_mo=200) as session:
@@ -27,6 +28,7 @@ def playwright_runner():
             ("Step_08 - verify guest modal", step_08),
             ("Step_09 - select guest and other options", step_09),
             ("Step_10 - click the search button", step_10),
+            ("Step_11 - verify date and guests", step_11),
         ]
 
         try:
