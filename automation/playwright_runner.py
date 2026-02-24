@@ -2,6 +2,7 @@ from automation.core.browser_session import BrowserSession
 from automation.utils.db_helper import save_test_result
 from automation.tests.step_01 import step_01
 from automation.tests.step_02 import step_02
+from automation.tests.step_03 import step_03
 
 def playwright_runner():
     with BrowserSession(headless=False, slow_mo=200) as session:
@@ -11,6 +12,7 @@ def playwright_runner():
         tests = [
             ("Step_01 - close modal", step_01),
             ("Step_02 - type country in search", step_02),
+            ("Step_03 - collect suggestion countries", step_03),
         ]
 
         try:
