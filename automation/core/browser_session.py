@@ -18,13 +18,6 @@ class BrowserSession:
         context.clear_cookies()
         self.page = context.new_page()
         return self
-    
-    def screenshot(self, name):
-        folder = "automation/screenshots"
-        os.makedirs(folder, exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        path = f"{folder}/{name}_{timestamp}.png"
-        self.screenshot(path=path)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         if self.browser:
