@@ -1,3 +1,5 @@
+from playwright.sync_api import TimeoutError
+
 def step_01(page):
     try:
         # Try to close modal if it appears
@@ -14,4 +16,4 @@ def step_01(page):
         return True, comment, page.url
 
     except Exception as e:
-        return True, f"Expected: If modal found, close it | Outcome: Exception - {str(e)}", page.url
+        return False, f"Expected: If modal found, close it | Outcome: Exception - {str(e)}", page.url
