@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+import os
 from automation.core.browser_session import BrowserSession
 from automation.utils.db_helper import save_test_result
 from automation.tests.step_01 import step_01
@@ -13,8 +15,9 @@ from automation.tests.step_10 import step_10
 from automation.tests.step_11 import step_11
 from automation.tests.step_12 import step_12
 
+load_dotenv()
 def playwright_runner():
-    with BrowserSession(headless=False, slow_mo=200) as session:
+    with BrowserSession(headless=os.getenv("HEADLESS", "True").lower() == "true", slow_mo=int(os.getenv("SLOW_MO", 0))) as session:
         page = session.page
         page.goto("https://www.airbnb.com/")
     
