@@ -4,10 +4,10 @@ from automation.tests.step_01 import step_01
 
 
 def playwright_runner():
-    with BrowserSession(headless=False, slow_mo=200) as page:
-        page.context.clear_cookies()
+    with BrowserSession(headless=False, slow_mo=200) as session:
+        page = session.page
         page.goto("https://www.airbnb.com/")
-
+    
         tests = [
             ("Step_01 - close modal", step_01),
         ]
@@ -15,6 +15,7 @@ def playwright_runner():
         try:
             for test_name, test_func in tests:
                 passed, comment, url = test_func(page)
+
                 save_test_result(
                     testcase=test_name,
                     url=url,
