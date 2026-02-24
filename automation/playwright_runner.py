@@ -19,7 +19,7 @@ load_dotenv()
 def playwright_runner():
     with BrowserSession(headless=os.getenv("HEADLESS", "True").lower() == "true", slow_mo=int(os.getenv("SLOW_MO", 0))) as session:
         page = session.page
-        page.goto("https://www.airbnb.com/")
+        page.goto(os.getenv("BASE_URL", "https://www.airbnb.com/"))
     
         tests = [
             ("Step_01 - close modal", step_01),

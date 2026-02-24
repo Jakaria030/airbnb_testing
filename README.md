@@ -71,6 +71,10 @@ Follow these steps to set up and run the project locally:
 📝 Notes
 
 - The SQLite database (db.sqlite3) is not included in the repository. Create by running migrations.
+- Add .env file before run test command <br>
+    `<BASE_URL>=<https://www.airbnb.com>` <br>
+    `<HEADLESS>=<Bolean>` <br>
+    `<SLOW_MO>=<number>` <br>
 
 1. Create a superuser
     ```bash
