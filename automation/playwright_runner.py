@@ -14,6 +14,7 @@ from automation.tests.step_09 import step_09
 from automation.tests.step_10 import step_10
 from automation.tests.step_11 import step_11
 from automation.tests.step_12 import step_12
+from automation.tests.step_13 import step_13
 
 load_dotenv()
 def playwright_runner():
@@ -35,6 +36,7 @@ def playwright_runner():
             ("Step_10.1 - close modal", step_01),
             ("Step_11 - verify date and guests", step_11),
             ("Step_12 - verify url", step_12),
+            ("Step_13 - scrape data", step_13),
         ]
 
         try:
