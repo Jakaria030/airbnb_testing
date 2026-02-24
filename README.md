@@ -63,6 +63,10 @@ Follow these steps to set up and run the project locally:
     ```bash
     python manage.py runserver
     ```
+9. Run the command for end to end testing
+    ```bash
+    python manage.py airbnb_journey
+    ```
 
 📝 Notes
 
