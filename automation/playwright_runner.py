@@ -6,6 +6,7 @@ from automation.tests.step_03 import step_03
 from automation.tests.step_04 import step_04
 from automation.tests.step_05 import step_05
 from automation.tests.step_06 import step_06
+from automation.tests.step_07 import step_07
 
 def playwright_runner():
     with BrowserSession(headless=False, slow_mo=200) as session:
@@ -19,6 +20,7 @@ def playwright_runner():
             ("Step_04 - click one suggestion coumtry", step_04),
             ("Step_05 - verify date picker", step_05),
             ("Step_06 - randomly navigate calendar", step_06),
+            ("Step_07 - check-in check-out date select", step_07),
         ]
 
         try:
