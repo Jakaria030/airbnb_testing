@@ -29,6 +29,7 @@ def playwright_runner():
             ("Step_08 - verify guest modal", step_08),
             ("Step_09 - select guest and other options", step_09),
             ("Step_10 - click the search button", step_10),
+            ("Step_10.1 - close modal", step_01),
             ("Step_11 - verify date and guests", step_11),
             ("Step_12 - verify url", step_12),
         ]
