@@ -1,0 +1,32 @@
+from automation.core.browser_session import BrowserSession
+from automation.utils.db_helper import save_test_result
+from automation.tests.step_01 import step_01
+
+
+def playwright_runner():
+    with BrowserSession(headless=False, slow_mo=200) as page:
+        page.context.clear_cookies()
+        page.goto("https://www.airbnb.com/")
+
+        tests = [
+            ("Step_01 - close modal", step_01),
+        ]
+
+        try:
+            for test_name, test_func in tests:
+                passed, comment, url = test_func(page)
+                save_test_result(
+                    testcase=test_name,
+                    url=url,
+                    passed=passed,
+                    comment=comment
+                )
+                print(f"Test Name: {test_name} | Status: {"PASS" if passed else "FAIL"} | {comment}")
+        except Exception as e:
+            save_test_result(
+                testcase=test_name,
+                url=url,
+                passed=False,
+                comment=comment
+            )
+            print(f"Test Name: {test_name} | Status: FAIL | Error: {e}")
