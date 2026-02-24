@@ -13,7 +13,7 @@ def step_02(page):
         search_input = page.locator('[data-testid="structured-search-input-field-query"]')
         search_input.wait_for(timeout=5000)
         search_input.click()
-        search_input.fill("")  # clear first
+        search_input.fill("")
         search_input.type(selected_country, delay=200)
 
         comment = f"Expected: Type random country name in search | Outcome: Typed '{selected_country}'"
